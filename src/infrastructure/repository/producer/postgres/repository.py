@@ -1,6 +1,6 @@
 from src.domain.producer.entity.entity import Producer
 from src.domain.producer.repository.interface import ProducerRepositoryInterface
-from src.infrastructure.producer.repository.postgres.connection import PostgresSQLConnection
+from src.infrastructure.repository.producer.postgres.connection import PostgresSQLConnection
 from src.usecase.producer.update.update_producer_dto import InputUpdateProducerDto
 
 

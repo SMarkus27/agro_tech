@@ -1,6 +1,6 @@
 from asyncio import run
 
-from src.infrastructure.producer.repository.postgres.connection import PostgresSQLConnection
+from src.infrastructure.repository.producer.postgres.connection import PostgresSQLConnection
 
 
 async def create_producer_table():
