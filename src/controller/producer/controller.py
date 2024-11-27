@@ -2,7 +2,7 @@ import simplejson as json
 
 from fastapi import status, Response
 
-from src.infrastructure.producer.repository.postgres.repository import ProducerRepository
+from src.infrastructure.repository.producer.postgres.repository import ProducerRepository
 from src.usecase.producer.create.create import CreateProducerUseCase
 from src.usecase.producer.create.create_dto import InputCreateProducerDto
 from src.usecase.producer.delete.delete_producer import DeleteProducerUseCase

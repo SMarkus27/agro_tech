@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from src.infrastructure.producer.repository.postgres.repository import ProducerRepository
+from src.infrastructure.repository.producer.postgres.repository import ProducerRepository
 from src.usecase.producer.create.create import CreateProducerUseCase
 
 
