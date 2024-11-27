@@ -9,16 +9,18 @@ class FindTotalProducerUseCase:
 
     async def execute(self):
         producer = await self._producer_repository.find_total()
-        total_area = float(producer[0].get("total_area"))
-        total_farm = float(producer[0].get("total_farm"))
 
-        if producer is None:
+        if len(producer) == 0:
             return {
                 "status_code": status.HTTP_404_NOT_FOUND,
                 "total_area": [],
                 "total_farm": [],
 
             }
+
+        total_area = float(producer[0].get("total_area"))
+        total_farm = float(producer[0].get("total_farm"))
+
         return {
                 "status_code": 200,
                 "total_area": total_area,

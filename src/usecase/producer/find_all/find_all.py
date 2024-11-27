@@ -18,6 +18,4 @@ class FindAllProducerUseCase:
         return {
                 "status_code": 200,
                 "producers": producer
-
-
         }
