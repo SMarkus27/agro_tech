@@ -281,3 +281,23 @@ def test_invalid_total_arable_and_vegetable_area():
         Producer(**producer)
 
     assert str(error.value) == "Sum of Arable and Vegetation Area must be less or equal to Farn Area"
+
+
+def test_invalid_cultivation_type():
+    producer = {
+        "id": "12456",
+        "cpf_cnpj": "12345678910",
+        "document_type": "CPF",
+        "producer_name": "John",
+        "farm_name": "John's Farm",
+        "city": "city 1",
+        "state": "state 1",
+        "farm_area": 1000,
+        "arable_area": 900,
+        "vegetation_area": 200,
+        "cultivation": "Banana",
+    }
+    with pytest.raises(Exception) as error:
+        Producer(**producer)
+
+    assert str(error.value) == "Cultivation type invalid"

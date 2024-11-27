@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from src.domain.producer.enum.producer import CultivationEnum
+
 
 @dataclass
 class Producer:
@@ -38,7 +40,6 @@ class Producer:
     def verify_cpf_cnpj(cpf_cnpj, document_type):
         if len(cpf_cnpj) == 0:
             raise Exception("CPF/CNPJ is required")
-        print(document_type)
         if document_type == "CPF" and len(cpf_cnpj) < 11:
             print("aaa")
             raise Exception("CPF invalid")
@@ -91,6 +92,10 @@ class Producer:
     def verify_cultivation(cultivation: str) -> str:
         if len(cultivation) == 0:
             raise Exception("Cultivation type is required")
+        cultivation_list = [CultivationEnum[cultivation.name].value for cultivation in CultivationEnum]
+        if not cultivation_list.__contains__(cultivation):
+            raise Exception("Cultivation type invalid")
+
         return cultivation
 
     @staticmethod
